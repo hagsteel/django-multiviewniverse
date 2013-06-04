@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h1>Multiviewninverse demo</h1>
+<ul>
+    <li><a href="{% url 'create' %}">create</a></li>
+    {% for person in people %}
+    <li>
+        {{ person }}
+        <ul>
+            {% for pet in person.pets.all %}
+                <li><a href="{% url 'update' person.pk pet.pk %}">update {{ person }} and {{ pet }}</a></li>
+            {% endfor %}
+        </ul>
+
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

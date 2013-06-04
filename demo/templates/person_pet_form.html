@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <form action="." method="post">
+        {% csrf_token %}
+        <h3>Person</h3>
+        {{ person_form.as_p }}
+
+        <h3>Pet</h3>
+        {{ pet_form.as_p }}
+        <input type="submit" value="save">
+    </form>
+</body>
+</html>
